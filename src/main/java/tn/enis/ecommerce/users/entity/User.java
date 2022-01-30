@@ -1,11 +1,8 @@
-package tn.enis.ecommerce.users;
+package tn.enis.ecommerce.users.entity;
 
+import com.sun.xml.txw2.annotation.XmlCDATA;
 import lombok.Data;
-import tn.enis.ecommerce.commande.Commande;
-import tn.enis.ecommerce.users.acheterBehaviour.AcheterBehaviour;
-
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Data
@@ -22,8 +19,9 @@ public abstract class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String name;
-    private String eMail;
+    @Column(unique = true)
+    private String email;
     private int number;
-    @OneToMany
-    List<Commande> commandeList ;
+    private String password;
+
 }
