@@ -13,6 +13,4 @@ public class PizzeriaLocation {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String location;
-    @OneToMany
-    private List<PizzeriaFactory> pizzeriaFactoryList;
 }

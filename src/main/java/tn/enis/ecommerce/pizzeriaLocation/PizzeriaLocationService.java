@@ -30,7 +30,6 @@ public class PizzeriaLocationService {
         if(pizzeriaLocationRepository.findById(idPizzeriaLocationToUpdate).isPresent()){
             PizzeriaLocation pizzeriaLocationToUpdated = pizzeriaLocationRepository.getById(idPizzeriaLocationToUpdate);
             pizzeriaLocationToUpdated.setLocation(pizzeriaLocationUpdated.getLocation());
-            pizzeriaLocationToUpdated.setPizzeriaFactoryList(pizzeriaLocationUpdated.getPizzeriaFactoryList());
             pizzeriaLocationRepository.save(pizzeriaLocationToUpdated);
         }
     }
